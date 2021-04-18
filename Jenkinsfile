@@ -19,15 +19,17 @@ pipeline {
     }
 
     stage ('Testing code') {
-	  steps {
-        parallel (
-          First: {
+	  parallel {
+        stage ('Test') {
+		  steps {
             sh 'mvn test'
-          },
-          Second: {
-            echo 'fake test'
           }
-        )
+		}
+        stage ('Fake') {
+		  steps {
+            echo 'fake'
+          }
+		}
       }
     }
 
