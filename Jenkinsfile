@@ -16,7 +16,7 @@ node {
          },
          Second: {
             stage('Second') {
-               sh 'mvn package'
+               echo 'Test'
             }
          }
       )
