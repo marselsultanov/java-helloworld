@@ -1,5 +1,5 @@
 node {
    stage('Building code') {
-      'sh mvn compile'
+      sh 'mvn compile'
    }
 }
