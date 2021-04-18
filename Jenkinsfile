@@ -25,8 +25,7 @@ node {
 	stage('Triggering job and fetching artefact') {
 		build job: 'Child1', parameters: [string(name: 'Branch', value: 'msultanov')]
 		step (
-			$class: 'CopyArtifact',
-			projectName: 'Child1',
+			CopyArtifact projectName: 'Child1',
 			filter: 'msultanov_dsl_script.tar.gz'
 		)
 	}
@@ -35,8 +34,7 @@ node {
 		sh 'tar -xzvf msultanov_dsl_script.tar.gz jobs.groovy'
 		sh 'tar -czvf pipeline-msultanov-${BUILD_NUMBER}.tar.gz jobs.groovy Jenkinsfile -C target java-helloworld-1.0.jar'
 		step (
-			$class: 'archiveArtifacts',
-			artifacts: 'pipeline-msultanov-${BUILD_NUMBER}.tar.gz'
+			archiveArtifacts artifacts: 'pipeline-akarzhou-${BUILD_NUMBER}.tar.gz'
 		)
 	}
 }
