@@ -33,7 +33,7 @@ pipeline {
       }
     }
 
-    stage ('Triggering job') {
+    stage ('Triggering Child1') {
       steps {
         build (
           job: 'Child1',
@@ -54,6 +54,14 @@ pipeline {
           artifacts: "pipeline-msultanov-${BUILD_NUMBER}.tar.gz"
         )
       }
+    }
+
+    stage ('Approval') {
+      steps {
+        input (
+          id: 'Manual',
+          message: 'Are you sure want to deploy artifact?',
+          ok: 'Yes'
     }
   }
 }
