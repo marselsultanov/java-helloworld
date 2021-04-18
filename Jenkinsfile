@@ -32,8 +32,8 @@ pipeline {
         }
       }
     }
-    
-    stage ('Triggering job and fetching artefact') {
+
+    stage ('Triggering job') {
       steps {
         build (
           job: 'Child1',
@@ -42,6 +42,16 @@ pipeline {
         copyArtifacts (
           projectName: 'Child1',
           filter: 'msultanov_dsl_script.tar.gz'
+        )
+      }
+    }
+
+    stage ('Packaging') {
+      steps {
+        sh 'tar -xzvf msultanov_dsl_script.tar.gz jobs.groovy'
+        sh 'tar -czvf pipeline-msultanov-${BUILD_NUMBER}.tar.gz jobs.groovy Jenkinsfile -C target java-helloworld-1.0.jar'
+        archiveArtifacts (
+          artifacts: "pipeline-msultanov-${BUILD_NUMBER}.tar.gz"
         )
       }
     }
