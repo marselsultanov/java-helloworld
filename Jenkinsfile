@@ -33,7 +33,7 @@ pipeline {
       }
     }
 
-    stage ('Triggering Child1') {
+    stage ('Triggering job') {
       steps {
         build (
           job: 'Child1',
@@ -59,9 +59,7 @@ pipeline {
     stage ('Approval') {
       steps {
         input (
-          id: 'Manual',
-          message: 'Are you sure want to deploy artifact?',
-          ok: 'Yes'
+          message: 'Are you sure want to deploy artifact?'
         )
       }
     }
