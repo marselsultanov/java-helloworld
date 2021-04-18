@@ -62,6 +62,8 @@ pipeline {
           id: 'Manual',
           message: 'Are you sure want to deploy artifact?',
           ok: 'Yes'
+        )
+      }
     }
   }
 }
