@@ -16,7 +16,7 @@ node {
          },
          Second: {
             stage('Second') {
-               echo 'Test'
+               echo 'fake test'
             }
          }
       )
