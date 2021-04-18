@@ -32,9 +32,9 @@ node {
 	
 	stage ('Packaging') {
 		sh 'tar -xzvf msultanov_dsl_script.tar.gz jobs.groovy'
-		sh 'tar -czvf pipeline-msultanov-${BUILD_NUMBER}.tar.gz jobs.groovy Jenkinsfile -C target java-helloworld-1.0.jar'
+		sh "tar -czvf pipeline-msultanov-${BUILD_NUMBER}.tar.gz jobs.groovy Jenkinsfile -C target java-helloworld-1.0.jar"
 		archiveArtifacts (
-			artifacts: 'pipeline-akarzhou-${BUILD_NUMBER}.tar.gz'
+			artifacts: "pipeline-akarzhou-${BUILD_NUMBER}.tar.gz"
 		)
 	}
 }
