@@ -6,5 +6,4 @@ Also include:
 1. sonar-project.properties for Sonarqube
 2. Jenkinsfile for Jenkins Pipeline
 
-Required:
-https://github.com/marselsultanov/jenkins-dsl
+Required: https://github.com/marselsultanov/jenkins-dsl
