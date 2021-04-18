@@ -24,11 +24,10 @@ node {
    
    stage('Triggering job and fetching artefact') {
       build job: 'Child1', parameters: [string(name: 'Branch', value: 'msultanov')]
-   	step (
+      step (
          $class: 'CopyArtifact',
          projectName: 'Child1',
          filter: 'msultanov_dsl_script.tar.gz'
-         о
       )
    }
 }
