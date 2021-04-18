@@ -36,7 +36,7 @@ node {
 		sh 'tar -czvf pipeline-msultanov-${BUILD_NUMBER}.tar.gz jobs.groovy Jenkinsfile -C target java-helloworld-1.0.jar'
 		step (
 			$class: 'archiveArtifacts',
-			artifacts: 'pipeline-akarzhou-${BUILD_NUMBER}.tar.gz'
+			artifacts: 'pipeline-msultanov-${BUILD_NUMBER}.tar.gz'
 		)
 	}
 }
