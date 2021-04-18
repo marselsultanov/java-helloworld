@@ -32,5 +32,18 @@ pipeline {
         }
       }
     }
+    
+    stage ('Triggering job and fetching artefact') {
+      steps {
+        build (
+          job: 'Child1',
+          parameters: [string(name: 'Branch', value: 'msultanov')]
+        )
+        copyArtifacts (
+          projectName: 'Child1',
+          filter: 'msultanov_dsl_script.tar.gz'
+        )
+      }
+    }
   }
 }
