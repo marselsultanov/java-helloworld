@@ -13,7 +13,7 @@ node {
             stage('First') {
                sh 'mvn test'
             }
-         }
+         },
          Second: {
             stage('Second') {
                sh 'mvn test'
