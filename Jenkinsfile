@@ -19,7 +19,7 @@ pipeline {
         parallel (
           First: {
             sh 'mvn test'
-          }
+          },
           Second: {
             echo 'fake test'
           }
