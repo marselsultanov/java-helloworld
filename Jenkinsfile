@@ -28,6 +28,7 @@ node {
          $class: 'CopyArtifact',
          projectName: 'Child1',
          filter: 'msultanov_dsl_script.tar.gz'
+         о
       )
    }
 }
