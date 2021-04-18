@@ -63,10 +63,16 @@ pipeline {
         )
       }
     }
-	
+
     stage ('Deployment') {
       steps {
         sh 'java -jar target/java-helloworld-1.0.jar'
+      }
+    }
+
+    stage ('Status') {
+      steps {
+        echo 'Success'
       }
     }
   }
