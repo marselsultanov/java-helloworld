@@ -27,7 +27,7 @@ node {
    	step (
          $class: 'CopyArtifact',
          projectName: 'Child1',
-        	filter: 'msultanov_dsl_script.tar.gz'
+         filter: 'msultanov_dsl_script.tar.gz'
       )
    }
 }
