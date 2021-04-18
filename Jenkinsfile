@@ -1,6 +1,6 @@
 node {
 	stage('Checking out') {
-		heckout scm
+		checkout scm
 	}
    
 	stage('Building code') {
